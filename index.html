@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/IMAGES/favicon.ico">
+    <title>TASK8</title>
+</head>
+<style>
+div#d1{
+margin-top:200px;
+width:700px;
+position:absolute;
+right:520px;
+}
+div#d2{
+margin-top:50px;
+position:absolute;
+right:770px;
+}
+div#d3{
+position:relative;
+right:0px;
+left:635px;
+}
+</style>
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO5CBnQiX8xkGxIaPGt05MqTPbbWzbUeHdow&usqp=CAU">
+    
+			<div class="header" style=background-color:>
+				
+				<div id="d3">
+				<h1  style=font-size:50px;color:red>
+				CAR DETAILS 
+				</h1>
+				</div>
+				
+			</div>
+
+      
+			
+		
+
+                  		<div id="d2" align=center>
+                  		<input    placeholder="Enter car plate number" id="in1" name='y' / > 
+				<button onclick="lw()"  class="btn">Run</button>				
+				</div> 
+				<pre><div align=center id="d1" style="color:yellow;"> <h3 align=center></h3>
+				</div></pre>
+				
+			
+		
+                  
+              
+
+<script>
+        function lw() {
+                
+                var i = document.getElementById("in1").value
+
+                var xhr = new XMLHttpRequest();
+                
+                xhr.open("GET", "http://192.168.43.47/cgi-bin/car.py?x=" + i, true);
+               
+                xhr.send();
+
+                xhr.onload = function() {
+                        var output = xhr.responseText;
+                        document.getElementById("d1").innerHTML = output;
+                }
+}
+</script>
+</body><html>
